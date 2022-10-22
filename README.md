@@ -2,7 +2,7 @@
 
 Description 
 
-## Learning Sequence
+## Build Sequence
 
 1. Introduction
 2. Install Tools
@@ -13,5 +13,10 @@ Description
     2. Add header
     3. Add main section 
     4. Add footer 
-    5. Add tailwind classses
+    5. Add tailwind classes
+6. List Products
+    1. Add data.js
+    2. Add images
+    3. Render products
+
     
