@@ -95,7 +95,7 @@ function CartScreen() {
               </li>
               <li>
                 <button
-                  onClick={() => router.push("/shipping")}
+                  onClick={() => router.push("login?redirect=/shipping")}
                   className="primary-button w-full"
                 >
                   Check Out
@@ -109,7 +109,7 @@ function CartScreen() {
   );
 }
 export default dynamic(() => Promise.resolve(CartScreen), { ssr: false });
-/* We export CartScreen component as dynamic page that will be rendered only in client side  
+/* We export CartScreen component as dynamic page that will be rendered only in client side
  */
 
 /* To resolve the Error: Hydration failed because the initial UI does not match what was rendered 
@@ -118,5 +118,3 @@ in the cart but in the client, the cookie contained that(as we are saving the va
 The CartScreen has to be rendered as client side component instead of SSR as there is a mismatch
 between Client and SSR.
 */
-
-
