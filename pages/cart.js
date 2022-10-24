@@ -5,8 +5,9 @@ import { XCircleIcon } from "@heroicons/react/outline";
 import Layout from "../components/Layout";
 import { Store } from "../utils/Store";
 import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
 
-export default function CartScreen() {
+function CartScreen() {
   const router = useRouter();
 
   const { state, dispatch } = useContext(Store);
@@ -107,3 +108,15 @@ export default function CartScreen() {
     </Layout>
   );
 }
+export default dynamic(() => Promise.resolve(CartScreen), { ssr: false });
+/* We export CartScreen component as dynamic page that will be rendered only in client side  
+ */
+
+/* To resolve the Error: Hydration failed because the initial UI does not match what was rendered 
+on the server (while refreshing the cookie).Because, in the server, the cookie contains no item 
+in the cart but in the client, the cookie contained that(as we are saving the value explicitly).
+The CartScreen has to be rendered as client side component instead of SSR as there is a mismatch
+between Client and SSR.
+*/
+
+
