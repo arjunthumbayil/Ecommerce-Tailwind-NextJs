@@ -53,7 +53,11 @@ Description
     3. Save connection url in .env file
     4. Create db utils file
     5. Create sample users
-    
+14. Create login API
+    1. Install next auth
+    2. Create nextauth.js
+    3. Implement signin
+    4. Use signin in login form
     
     
     
